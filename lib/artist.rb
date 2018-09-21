@@ -5,7 +5,6 @@ class Artist
   attr_accessor :name
   @@all = []
 
-
   def initialize(name)
     @name = name
     @@all << self
@@ -15,18 +14,9 @@ class Artist
     @@all
   end
 
-
-
-  # def new_meal(waiter, total, tip=0)
-  #     Meal.new(waiter, self, total, tip)
-  #   end
-
-
-
   def new_song(name, genre)
     Song.new(name, self, genre)
   end
-
 
   def songs
     Song.all.select do |song|
@@ -34,15 +24,12 @@ class Artist
     end
   end
 
-
   def genres
     songs.collect do |song|
       song.genre
-#binding.pry
     end
-
   end
-#binding.pry
+
 end
 
 
