@@ -16,12 +16,15 @@ class Artist
   end
 
 
+
+  # def new_meal(waiter, total, tip=0)
+  #     Meal.new(waiter, self, total, tip)
+  #   end
+
+
+
   def new_song(name, genre)
-    new_song = Song.new
-    new_song.name = name
-    new_song.artist = self
-    new_song.genre = genre
-    #@all << new_song
+    Song.new(name, self, genre)
   end
 
 
@@ -33,18 +36,14 @@ class Artist
 
 
   def genres
-    songs.select do |song|
+    songs.collect do |song|
       song.genre
+#binding.pry
     end
+
   end
-
+#binding.pry
 end
-
-
-
-
-
-
 
 
 # The Artist model:

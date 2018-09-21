@@ -2,7 +2,7 @@ require 'pry'
 
 class Genre
   @@all = []
-
+  attr_accessor :name
 
   def initialize(name)
     @name = name
@@ -20,8 +20,8 @@ class Genre
   end
 
   def artists
-    songs.all.select do |song|
-      song.artist == self
+    self.songs.collect do |song|
+      song.artist
     end
   end
 
