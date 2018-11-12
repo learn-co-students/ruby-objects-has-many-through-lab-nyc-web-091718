@@ -14,7 +14,7 @@ class Doctor
       this_doc_appointments. doctor == self
     end
   end
-  rspec--f-f
+
 
   #2. Need to return an array of appointments
   #(special criteria - appts belong tothis specific doctor)

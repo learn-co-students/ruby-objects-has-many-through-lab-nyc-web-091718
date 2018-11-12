@@ -7,6 +7,13 @@ require_relative './lib/patient'
 require_relative './lib/doctor'
 require_relative './lib/appointment'
 
+#10.times do |number|
+#Artist.new("Bob" #{number})
+
+#10.times do |number|
+#Genre.new("Bob" #{number})
+
+#Song.new("s1", Artist.all[0], Genre.all[0])
 
 g1 = Genre.new("pop")
 g2 = Genre.new("classic")

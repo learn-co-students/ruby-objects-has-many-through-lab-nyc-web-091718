@@ -21,12 +21,36 @@ class Genre
 
     def songs
       Song.all.select do |certain_song|
-        certain_song.genre  == self# [song1, song2, song3, song4]
+        certain_song.genre  == self # [song1, song2, song3, song4]
       end
+      #compare to self, who belongs to me
       # return songs of a certain genre
       # [song1, song2]
     end
-    
+
+    def artists
+      #SELF is whatever is left of the dot
+      #self in side the instance method will always be(call on)  instance of a class
+      self.songs.map do |one_song|
+        one_song.artist
+      end
+    end
+    #Genre.all[0]artists to test it
+    # rihanna = Artist.new('Rihanna')
+    # pop = Genre.new('pop')
+    # umbrella = Song.new('Umbrella', rihanna, pop)
+    # britney = Artist.new('Britney Spears')
+    # toxic = Song.new('Toxic', britney, pop)
+    #
+    # pop.songs ==> [
+    #                 {name: 'Umbrella', artist: { name: 'Rihanna' }, genre: { name: 'Pop' } },
+    #                 {name: 'Toxic', artist: { name: 'Britney Spears' }, genre: { name: 'Pop' } }
+    #               ]
+    # pop.artists ==> [ {name: 'Rihanna' },  {name: 'Britney Spears' } ]
+
+
+
+
     #     def artists
     #       Song.all.each do |each_s|
     #         my_artist_list = []
